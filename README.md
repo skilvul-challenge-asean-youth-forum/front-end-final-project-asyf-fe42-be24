@@ -88,7 +88,7 @@ Visual Studio Code
 
 - Clone Project ini ( Direkomendasikan menggunakan SSH )
 
-  > `git clone git@github.com:skilvul-challenge-asean-youth-forum/asyf-fe-42.git`
+  > `git clone git@github.com:skilvul-challenge-asean-youth-forum/front-end-final-project-asyf-fe42-be24.git`
 
 - Pindah ke branch development
 
