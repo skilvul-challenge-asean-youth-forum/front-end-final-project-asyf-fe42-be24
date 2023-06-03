@@ -7,6 +7,10 @@ const Navbar = () => {
     { id: 3, menu: "article", link: "/article" },
     { id: 4, menu: "forum", link: "/forum" },
   ];
+
+  const navLinkActive = ({ isActive }) => {
+    return isActive ? "text-yellow-400 capitalize" : "text-white capitalize";
+  };
   return (
     <nav className="bg-[#237804] border-gray-200 dark:bg-gray-900 text-white sticky top-0">
       <div className="flex flex-wrap justify-between max-w-screen-xl mx-auto items-center p-4">
@@ -22,7 +26,7 @@ const Navbar = () => {
           <ul className="flex gap-x-8">
             {navList.map((item) => (
               <li key={item.id}>
-                <NavLink to={item.link} className="capitalize">
+                <NavLink to={item.link} className={navLinkActive}>
                   {item.menu}
                 </NavLink>
               </li>

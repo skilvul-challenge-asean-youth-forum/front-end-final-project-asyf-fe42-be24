@@ -1,5 +1,3 @@
-import React from "react";
-
 const Card = () => {
   return (
     <div className="max-w-sm mx-auto rounded overflow-hidden shadow-lg">
