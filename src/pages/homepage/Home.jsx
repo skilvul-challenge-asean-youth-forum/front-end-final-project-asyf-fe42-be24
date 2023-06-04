@@ -7,6 +7,7 @@ import Quote from "../../components/Quote";
 import ContentLayout from "../../layouts/content-layout";
 import ArticleLates from "../../components/ArticleLates";
 import SocialLink from "../../components/SocialLink";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -43,6 +44,7 @@ const Home = () => {
       </ContentLayout>
       <SocialLink />
       {/*simpan footer disini ya*/}
+      <Footer />
     </MainLayout>
   );
 };
