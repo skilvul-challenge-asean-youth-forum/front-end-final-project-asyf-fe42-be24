@@ -1,4 +1,4 @@
-import LoginForm from "../../components/LoginForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
 function Login() {
   return (
@@ -11,7 +11,7 @@ function Login() {
             alt="Loginbg"
           />
           <div className="col-span-1 flex justify-center items-center">
-            <div className="min-w-[800] px-8">
+            <div className="w-4/5 px-3">
               <div className="mb-8">
                 <h1 className="text-4xl font-bold">Welcome Back!</h1>
                 <p className="text-xl mt-2">Please log in to continue</p>
