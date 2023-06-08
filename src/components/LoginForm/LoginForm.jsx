@@ -1,23 +1,16 @@
-import Button from "../components/Button";
-
+import Button from "../Button";
+import TextField from "../TextField";
+import { Link } from "react-router-dom";
 const LoginForm = () => {
   return (
     <form>
       <div className="mb-3">
         <label className="font-medium mb-2 flex">Username</label>
-        <input
-          type="text"
-          placeholder="Username"
-          className="w-full border rounded-md bg-transparent border-gray-400 p-3"
-        />
+        <TextField type="text" placeHolder="Jhon doe" />
       </div>
       <div className="mb-3">
         <label className="font-medium mb-2 flex">Password</label>
-        <input
-          type="password"
-          placeholder="*********"
-          className="w-full border rounded-md bg-transparent border-gray-400 p-3"
-        />
+        <TextField type="password" placeHolder="********" />
       </div>
       <div className="flex justify-between items-center mb-6 mt-6">
         <Button name="Log in" />
@@ -27,9 +20,12 @@ const LoginForm = () => {
       </div>
       <div className="mt-4 flex justify-between items-center">
         Dont have an account yet?
-        <span className="mt-2 text-green-700 cursor-pointer font-medium mb-2 hover:underline">
-          Sign up
-        </span>
+        <Link
+          to="/register"
+          className="mt-2 text-green-700 cursor-pointer font-medium mb-2 hover:underline"
+        >
+          Register
+        </Link>
       </div>
     </form>
   );
