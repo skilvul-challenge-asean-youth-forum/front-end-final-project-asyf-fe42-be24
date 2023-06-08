@@ -3,12 +3,17 @@ import Navbar from "../../components/Navbar";
 import ContentLayout from "../../layouts/content-layout";
 import Footer from "../../components/Footer";
 import Grid from "../../layouts/content-layout/Grid";
-
+import TittleContainer from "../../components/TittleContainer";
 const About = () => {
   return (
     <MainLayout>
       <Navbar />
-      <ContentLayout title="Article">
+      <ContentLayout>
+        <TittleContainer>
+          <h1 className="text-3xl font-bold underline underline-offset-8 decoration-[#237804] decoration-3">
+            About Us
+          </h1>
+        </TittleContainer>
         <p className="text-2xl mt-8 leading-10">
           The ASEAN Youth Forum (AYF) is a movement that represents and fights
           for the young people in ASEAN to voice out their concerns and

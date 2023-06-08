@@ -8,6 +8,9 @@ import ContentLayout from "../../layouts/content-layout";
 import ArticleLates from "../../components/ArticleLates";
 import SocialLink from "../../components/SocialLink";
 import Footer from "../../components/Footer";
+import { BsArrowRightShort } from "react-icons/bs";
+import TittleContainer from "../../components/TittleContainer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -15,7 +18,16 @@ const Home = () => {
       <Navbar />
       <Jumbotron />
       <Quote text="“Freedom of opinion and expression is the fundamental human right of every individual in every corner of the world”" />
-      <ContentLayout title="Article" label="See More">
+      <ContentLayout>
+        <TittleContainer>
+          <h1 className="text-3xl font-bold underline underline-offset-8 decoration-[#237804] decoration-3">
+            Article
+          </h1>
+          <div className="flex items-center text-blue-600 text-xl font-semibold">
+            <Link to="/article">See More</Link>
+            <BsArrowRightShort size={25} />
+          </div>
+        </TittleContainer>
         <div className="flex justify-between gap-x-8">
           <Grid>
             <article className="col-span-3">
@@ -35,7 +47,16 @@ const Home = () => {
         </div>
       </ContentLayout>
       <Quote text="“The ASEAN Human Rights Declaration protects the freedom of opinion and expression of people in Southeast Asia”" />
-      <ContentLayout title="Forums" label="See More">
+      <ContentLayout>
+        <TittleContainer>
+          <h1 className="text-3xl font-bold underline underline-offset-8 decoration-[#237804] decoration-3">
+            Forum
+          </h1>
+          <div className="flex items-center text-blue-600 text-xl font-semibold">
+            <Link to="/article">See More</Link>
+            <BsArrowRightShort size={25} />
+          </div>
+        </TittleContainer>
         <Grid>
           <Card />
           <Card />
