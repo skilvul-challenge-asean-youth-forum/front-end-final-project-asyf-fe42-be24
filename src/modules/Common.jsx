@@ -14,7 +14,7 @@ export const useScrollPosition = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
         setIsScrolling(false);
-      }, 500);
+      }, 400);
     };
 
     setPosition({ x: window.scrollX, y: window.scrollY });
