@@ -5,6 +5,7 @@ import Grid from "../../layouts/content-layout/Grid";
 import ArticleLates from "../../components/ArticleLates";
 import TittleContainer from "../../components/TittleContainer";
 import SearchField from "../../components/SearchField";
+import Footer from "../../components/Footer";
 const Article = () => {
   return (
     <MainLayout>
@@ -54,6 +55,7 @@ const Article = () => {
           <ArticleLates />
         </div>
       </ContentLayout>
+      <Footer />
     </MainLayout>
   );
 };

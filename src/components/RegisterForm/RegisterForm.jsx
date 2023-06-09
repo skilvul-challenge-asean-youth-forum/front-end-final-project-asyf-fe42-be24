@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../Button/Button";
 import TextField from "../TextField";
 import { Link } from "react-router-dom";
 
