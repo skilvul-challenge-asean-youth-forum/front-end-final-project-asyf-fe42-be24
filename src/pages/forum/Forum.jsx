@@ -1,13 +1,13 @@
-import MainLayout from "../../layouts/main-layout";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import ButtonLink from "../../components/ButtonLink";
-import Grid from "../../layouts/content-layout/Grid";
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import SearchField from "../../components/SearchField";
-import ContentLayout from "../../layouts/content-layout";
-import TittleContainer from "../../components/TittleContainer";
+import MainLayout from "@/layouts/main-layout";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ButtonLink from "@/components/Button/ButtonLink";
+import Grid from "@/layouts/content-layout/Grid";
+import Card from "@/components/Card";
+import Button from "@/components/Button/Button";
+import SearchField from "@/components/SearchField";
+import ContentLayout from "@/layouts/content-layout";
+import TittleContainer from "@/components/TittleContainer";
 const Forum = () => {
   return (
     <MainLayout>

@@ -1,15 +1,15 @@
-import MainLayout from "../../layouts/main-layout";
-import Navbar from "../../components/Navbar";
-import Jumbotron from "../../components/Jumbotron";
-import Grid from "../../layouts/content-layout/Grid";
-import Card from "../../components/Card";
-import Quote from "../../components/Quote";
-import ContentLayout from "../../layouts/content-layout";
-import ArticleLates from "../../components/ArticleLates";
-import SocialLink from "../../components/SocialLink";
-import Footer from "../../components/Footer";
+import MainLayout from "@/layouts/main-layout";
+import Navbar from "@/components/Navbar";
+import Jumbotron from "@/components/Jumbotron";
+import Grid from "@/layouts/content-layout/Grid";
+import Card from "@/components/Card";
+import Quote from "@/components/Quote";
+import ContentLayout from "@/layouts/content-layout";
+import ArticleLates from "@/components/ArticleLates";
+import SocialLink from "@/components/SocialLink";
+import Footer from "@/components/Footer";
 import { BsArrowRightShort } from "react-icons/bs";
-import TittleContainer from "../../components/TittleContainer";
+import TittleContainer from "@/components/TittleContainer";
 import { Link } from "react-router-dom";
 
 const Home = () => {

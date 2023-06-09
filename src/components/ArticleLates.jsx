@@ -1,5 +1,3 @@
-import React from "react";
-
 const ArticleLates = () => {
   return (
     <aside className="flex flex-col gap-y-2 w-4/5">

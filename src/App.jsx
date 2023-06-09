@@ -1,5 +1,4 @@
-import { Router } from "./router/Router";
-import Home from "./pages/homepage/Home";
+import { Router } from "@/router/Router";
 
 function App() {
   return <Router />;
