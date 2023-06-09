@@ -1,11 +1,11 @@
-import MainLayout from "../../layouts/main-layout";
-import ContentLayout from "../../layouts/content-layout";
-import Navbar from "../../components/Navbar";
-import Grid from "../../layouts/content-layout/Grid";
-import ArticleLates from "../../components/ArticleLates";
-import TittleContainer from "../../components/TittleContainer";
-import SearchField from "../../components/SearchField";
-import Footer from "../../components/Footer";
+import MainLayout from "@/layouts/main-layout";
+import ContentLayout from "@/layouts/content-layout";
+import Navbar from "@/components/Navbar";
+import Grid from "@/layouts/content-layout/Grid";
+import ArticleLates from "@/components/ArticleLates";
+import TittleContainer from "@/components/TittleContainer";
+import SearchField from "@/components/SearchField";
+import Footer from "@/components/Footer";
 const Article = () => {
   return (
     <MainLayout>

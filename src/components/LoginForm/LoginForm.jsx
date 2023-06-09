@@ -1,5 +1,5 @@
-import Button from "../Button";
-import TextField from "../TextField";
+import Button from "@/components/Button/Button";
+import TextField from "@/components/TextField";
 import { Link } from "react-router-dom";
 const LoginForm = () => {
   return (

@@ -1,9 +1,9 @@
-import MainLayout from "../../layouts/main-layout";
-import Navbar from "../../components/Navbar";
-import ContentLayout from "../../layouts/content-layout";
-import Footer from "../../components/Footer";
-import Grid from "../../layouts/content-layout/Grid";
-import TittleContainer from "../../components/TittleContainer";
+import MainLayout from "@/layouts/main-layout";
+import Navbar from "@/components/Navbar";
+import ContentLayout from "@/layouts/content-layout";
+import Footer from "@/components/Footer";
+import Grid from "@/layouts/content-layout/Grid";
+import TittleContainer from "@/components/TittleContainer";
 const About = () => {
   return (
     <MainLayout>
