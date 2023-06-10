@@ -1,4 +1,5 @@
 import Button from "@/components/Button/Button";
+import { Link } from "react-router-dom";
 
 const Jumbotron = () => {
   return (
@@ -12,7 +13,13 @@ const Jumbotron = () => {
           concerns and strategise for ways to achieve a better ASEAN Community.
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-          <Button name="Get Started" />
+          <Link to="/register">
+            <Button
+              textColor="text-white"
+              bgColor="bg-[#237804]"
+              name="Get Started"
+            />
+          </Link>
         </div>
       </section>
     </header>
