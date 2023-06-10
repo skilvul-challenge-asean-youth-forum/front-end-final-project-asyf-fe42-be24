@@ -11,7 +11,7 @@ const RegisterForm = () => {
       <TextField type="password" placeHolder="Password" />
       <TextField type="password" placeHolder="Confirm Password" />
 
-      <Button name="Register" />
+      <Button textColor="text-white" bgColor="bg-[#237804]" name="Register" />
       <div>
         <p>
           Already have account?{" "}
