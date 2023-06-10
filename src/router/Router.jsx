@@ -5,6 +5,7 @@ import About from "../pages/about/About";
 import Forum from "../pages/forum/Forum";
 import Register from "../pages/register/Register";
 import Article from "../pages/article/Article";
+import AddForum from "../pages/forum/AddForum";
 
 export const Router = () => {
   return (
@@ -15,6 +16,7 @@ export const Router = () => {
       <Route path="/about" element={<About />} />
       <Route path="/forum" element={<Forum />} />
       <Route path="/article" element={<Article />} />
+      <Route path="/addForum" element={<AddForum />} />
     </Routes>
   );
 };
