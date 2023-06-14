@@ -1,30 +1,19 @@
 import Button from "@/components/Button/Button";
 import TextField from "@/components/TextField";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "@/context/UserContext";
 
 const LoginForm = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useContext(UserContext);
+  const ctx = useContext(UserContext);
 
-  useEffect(() => {
-    console.log({ user });
-  }, [user]);
-
-  const handleSubmit = () => {
-    if (userName != user.name && password != user.password) {
-      console.log("gagal");
-    } else {
-      console.log("sukses");
-    }
-  };
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit();
+        ctx.handleLoginUser(userName, password);
       }}
     >
       <div className="mb-3">

@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/auth/Register/RegisterForm";
+import RegisterForm from "@/modules/auth/Register/RegisterForm";
 import MainLayout from "@/layouts/main-layout";
 const Register = () => {
   return (
