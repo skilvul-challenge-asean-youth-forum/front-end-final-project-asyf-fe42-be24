@@ -3,7 +3,7 @@ import ContentLayout from "@/layouts/content-layout";
 import Navbar from "@/components/Navbar";
 import ArticleLates from "@/components/ArticleLates";
 import Comments from "@/components/Comments";
-
+import Footer from "@/components/Footer";
 const ArticleDetails = () => {
   return (
     <MainLayout>
@@ -61,6 +61,7 @@ const ArticleDetails = () => {
         </article>
         <Comments />
       </ContentLayout>
+      <Footer />
     </MainLayout>
   );
 };
