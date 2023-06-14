@@ -7,7 +7,9 @@ import Register from "@/pages/register/Register";
 import Article from "@/pages/article/Article";
 import Addforum from "@/pages/addforum/Addforum";
 import DetailForum from "@/pages/detailforum/Detailforum";
+import ArticleDetails from "@/pages/article/ArticleDetails";
 
+ArticleDetails;
 export const Router = () => {
   return (
     <Routes>
@@ -18,6 +20,7 @@ export const Router = () => {
       <Route path="/forum" element={<Forum />} />
       <Route path="/article" element={<Article />} />
       <Route path="/addforum" element={<Addforum />} />
+      <Route path="/articledetails" element={<ArticleDetails />} />
       <Route path="/detailforum" element={<DetailForum />} />
     </Routes>
   );
