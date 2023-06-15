@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Context = createContext();
@@ -80,10 +80,12 @@ export const Provider = ({ children }) => {
     setArticleData(result);
     console.log(articleData);
   };
-
+  useEffect(() => {
+    getArticleData();
+  }, []);
   return (
     <Context.Provider
-      value={{ handleRegisterUser, handleLoginUser, getArticleData }}
+      value={{ handleRegisterUser, handleLoginUser, articleData }}
     >
       {children}
     </Context.Provider>

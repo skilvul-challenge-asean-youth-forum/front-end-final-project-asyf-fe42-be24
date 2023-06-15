@@ -6,14 +6,13 @@ import ArticleLates from "@/components/ArticleLates";
 import TittleContainer from "@/components/TittleContainer";
 import SearchField from "@/components/SearchField";
 import Footer from "@/components/Footer";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Context } from "@/context/Context";
+import TextButton from "@/components/Button/TextButton";
 
 const Article = () => {
   const ctx = useContext(Context);
-  useEffect(() => {
-    ctx.getArticleData();
-  }, []);
+
   return (
     <MainLayout>
       <Navbar />
@@ -31,33 +30,22 @@ const Article = () => {
             <article className="col-span-3">
               <img src="./ArticleHero.svg" className="w-full" alt="" />
             </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
-            <article className="">
-              <img src="./ArticleHero.svg" className="w-full" alt="" />
-            </article>
+            {ctx.articleData.map((article) => (
+              <article
+                key={article.id}
+                className="border-gray-400 border-2 text-justify h-52 pb-4"
+              >
+                <img
+                  src={article.pictures}
+                  className="w-full max-h-32"
+                  alt="img"
+                />
+                <div className="p-2 flex flex-col justify-between h-full">
+                  <h2>{article.title}</h2>
+                  <TextButton link={`/articles/articledetails/${article.id}`} />
+                </div>
+              </article>
+            ))}
           </Grid>
           <ArticleLates />
         </div>
