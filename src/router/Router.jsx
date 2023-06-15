@@ -17,11 +17,18 @@ export const Router = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/about" element={<About />} />
-      <Route path="/forum" element={<Forum />} />
-      <Route path="/article" element={<Article />} />
-      <Route path="/addforum" element={<Addforum />} />
-      <Route path="/articledetails" element={<ArticleDetails />} />
-      <Route path="/detailforum" element={<DetailForum />} />
+      <Route path="/articles">
+        <Route index element={<Article />} />
+        <Route
+          path="/articles/articledetails/:id"
+          element={<ArticleDetails />}
+        />
+      </Route>
+      <Route path="/forums">
+        <Route index element={<Forum />} />
+        <Route path="/forums/addforum" element={<Addforum />} />
+        <Route path="/forums/:id" element={<DetailForum />} />
+      </Route>
     </Routes>
   );
 };
