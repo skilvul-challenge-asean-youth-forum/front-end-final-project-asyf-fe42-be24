@@ -6,7 +6,14 @@ import ArticleLates from "@/components/ArticleLates";
 import TittleContainer from "@/components/TittleContainer";
 import SearchField from "@/components/SearchField";
 import Footer from "@/components/Footer";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "@/context/Context";
+
 const Article = () => {
+  const ctx = useContext(Context);
+  useEffect(() => {
+    ctx.getArticleData();
+  }, []);
   return (
     <MainLayout>
       <Navbar />

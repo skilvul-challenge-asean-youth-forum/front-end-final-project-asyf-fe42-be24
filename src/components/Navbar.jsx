@@ -10,8 +10,8 @@ const Navbar = () => {
   const navList = [
     { id: 1, menu: "home", link: "/" },
     { id: 2, menu: "about", link: "/about" },
-    { id: 3, menu: "article", link: "/article" },
-    { id: 4, menu: "forum", link: "/forum" },
+    { id: 3, menu: "article", link: "/articles" },
+    { id: 4, menu: "forum", link: "/forums" },
   ];
 
   const navLinkActive = ({ isActive }) => {

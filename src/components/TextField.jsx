@@ -1,7 +1,8 @@
-const TextField = ({ type, placeHolder, onChange, value }) => {
+const TextField = ({ type, placeHolder, onChange, value, accept }) => {
   return (
     <input
       type={type}
+      accept={accept}
       placeholder={placeHolder}
       value={value}
       onChange={onChange}

@@ -1,39 +1,28 @@
 import Button from "@/components/Button/Button";
 import TextField from "@/components/TextField";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "@/context/UserContext";
+import { Context } from "@/context/Context";
 
 const LoginForm = () => {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useContext(UserContext);
+  const ctx = useContext(Context);
 
-  useEffect(() => {
-    console.log({ user });
-  }, [user]);
-
-  const handleSubmit = () => {
-    if (userName != user.name && password != user.password) {
-      console.log("gagal");
-    } else {
-      console.log("sukses");
-    }
-  };
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit();
+        ctx.handleLoginUser(email, password);
       }}
     >
       <div className="mb-3">
-        <label className="font-medium mb-2 flex">Username</label>
+        <label className="font-medium mb-2 flex">Email</label>
         <TextField
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-          type="text"
-          placeHolder="Jhon doe"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeHolder="Jhondoe@example.com"
         />
       </div>
       <div className="mb-3">
