@@ -5,8 +5,8 @@ import About from "@/pages/about/About";
 import Forum from "@/pages/forum/Forum";
 import Register from "@/pages/register/Register";
 import Article from "@/pages/article/Article";
-import Addforum from "@/pages/addforum/Addforum";
-import DetailForum from "@/pages/detailforum/Detailforum";
+import Addforum from "@/pages/forum/Addforum";
+import DetailForum from "@/pages/forum/Detailforum";
 import ArticleDetails from "@/pages/article/ArticleDetails";
 
 ArticleDetails;
@@ -19,10 +19,7 @@ export const Router = () => {
       <Route path="/about" element={<About />} />
       <Route path="/articles">
         <Route index element={<Article />} />
-        <Route
-          path="/articles/articledetails/:id"
-          element={<ArticleDetails />}
-        />
+        <Route path="/articles/:id" element={<ArticleDetails />} />
       </Route>
       <Route path="/forums">
         <Route index element={<Forum />} />

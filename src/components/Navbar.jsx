@@ -3,6 +3,7 @@ import { useScrollPosition } from "@/modules/Common";
 import Button from "@/components/Button/Button";
 import { useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
+import Avatar from "./Avatar/Avatar";
 
 const Navbar = () => {
   const { isScrolling } = useScrollPosition();
@@ -13,6 +14,7 @@ const Navbar = () => {
     { id: 3, menu: "article", link: "/articles" },
     { id: 4, menu: "forum", link: "/forums" },
   ];
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const navLinkActive = ({ isActive }) => {
     return isActive
@@ -81,20 +83,26 @@ const Navbar = () => {
         )}
 
         <div className=" md:flex md:gap-x-3 hidden ">
-          <Link to="/login">
-            <Button
-              textColor="text-[#237804]"
-              bgColor="bg-white"
-              name="Log in"
-            />
-          </Link>
-          <Link to="/register">
-            <Button
-              textColor="text-[#237804]"
-              bgColor="bg-white"
-              name="Register"
-            />
-          </Link>
+          {user !== null ? (
+            <Avatar profilePicture={user.picture} fullname={user.fullname} />
+          ) : (
+            <>
+              <Link to="/login">
+                <Button
+                  textColor="text-[#237804]"
+                  bgColor="bg-white"
+                  name="Log in"
+                />
+              </Link>
+              <Link to="/register">
+                <Button
+                  textColor="text-[#237804]"
+                  bgColor="bg-white"
+                  name="Register"
+                />
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

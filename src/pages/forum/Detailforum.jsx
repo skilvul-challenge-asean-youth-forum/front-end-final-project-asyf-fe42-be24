@@ -1,11 +1,19 @@
+import { useState } from "react";
 import MainLayout from "@/layouts/main-layout";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button/Button";
 import ContentLayout from "@/layouts/content-layout";
 import TittleContainer from "@/components/TittleContainer";
+import Modal from "@/components/Modal";
 
 const DetailForum = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <MainLayout>
       <Navbar />
@@ -26,6 +34,7 @@ const DetailForum = () => {
               bgColor="bg-[#389E0D]"
               textColor="text-white"
               type="button"
+              onClick={toggleModal}
             />
           </div>
         </TittleContainer>
@@ -42,6 +51,7 @@ const DetailForum = () => {
         </p>
       </ContentLayout>
       <Footer />
+      <Modal showModal={showModal} toggleModal={toggleModal} />
     </MainLayout>
   );
 };

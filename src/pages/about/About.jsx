@@ -14,7 +14,7 @@ const About = () => {
             About Us
           </h1>
         </TittleContainer>
-        <p className="text-2xl mt-8 leading-10">
+        <p className="text-lg text-justify md:text-2xl mt-8 leading-normal md:leading-10">
           The ASEAN Youth Forum (AYF) is a movement that represents and fights
           for the young people in ASEAN to voice out their concerns and
           strategies for ways to achieve a better ASEAN. AYF has been a platform
@@ -24,8 +24,7 @@ const About = () => {
           its national chapters to focus the engagement on important and timely
           local issues affecting the youth, and consolidate policy proposal and
           agenda to put forward to the relevant ASEAN offices.
-        </p>
-        <p className="text-2xl mt-5 leading-10">
+          <br />
           AYF held an annual and regular solidarity meeting of youth civil
           society organisations in Southeast Asia, which is held as a parallel
           meeting to the ASEAN People’s Forum (APF)/ASEAN Civil Society
@@ -33,8 +32,7 @@ const About = () => {
           Summit. It is a strategic avenue to engage with ASEAN member states
           and mechanisms. It is also a venue to discuss the issues and concerns
           of young people in ASEAN and how to address them.
-        </p>
-        <p className="text-2xl mt-5 leading-10">
+          <br />
           AYF has been working at the local, national and regional level. In the
           last ten years, AYF has been organised in Thailand (2009), Vietnam
           (2010), Indonesia (2011), Cambodia (2012), Brunei Darussalam (2013),
