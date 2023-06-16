@@ -4,8 +4,15 @@ import Footer from "@/components/Footer";
 import Button from "@/components/Button/Button";
 import ContentLayout from "@/layouts/content-layout";
 import TittleContainer from "@/components/TittleContainer";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 const DetailForum = () => {
+  const { id } = useParams();
+  const ctx = useContext(Context);
+  console.log(id);
+  console.log(ctx.forumDetails);
   return (
     <MainLayout>
       <Navbar />

@@ -1,12 +1,17 @@
 import { createContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Context = createContext();
 
 export const Provider = ({ children }) => {
   const [articleData, setArticleData] = useState([]);
+  const [forumData, setForumData] = useState([]);
+  const [forumDetails, setForumDetails] = useState([]);
+
+  const { id } = useParams();
   const navigate = useNavigate();
 
+  //fuction register user
   const handleRegisterUser = async (
     fullName,
     password,
@@ -46,6 +51,8 @@ export const Provider = ({ children }) => {
       console.log(error);
     }
   };
+
+  //function login user
   const handleLoginUser = async (email, password) => {
     try {
       const response = await fetch(
@@ -72,20 +79,64 @@ export const Provider = ({ children }) => {
     }
   };
 
+  //function get data article
   const getArticleData = async () => {
-    const response = await fetch(
-      "https://backend-service-dev.up.railway.app/news"
-    );
-    const result = await response.json();
-    setArticleData(result);
-    console.log(articleData);
+    try {
+      const response = await fetch(
+        "https://backend-service-dev.up.railway.app/news"
+      );
+      const result = await response.json();
+      setArticleData(result);
+      console.log(articleData);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getArticleData();
   }, []);
+
+  //function get forum details
+  const getForumsDetails = async () => {
+    try {
+      const response = await fetch(
+        `https://backend-service-dev.up.railway.app/forums/${id}`
+      );
+      const result = await response.json();
+      setForumDetails(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getForumsDetails();
+  }, []);
+
+  //function get forum data
+  const getForumData = async () => {
+    try {
+      const response = await fetch(
+        "https://backend-service-dev.up.railway.app/forums"
+      );
+      const result = await response.json();
+      setForumData(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getForumData();
+  }, []);
   return (
     <Context.Provider
-      value={{ handleRegisterUser, handleLoginUser, articleData }}
+      value={{
+        handleRegisterUser,
+        handleLoginUser,
+        articleData,
+        forumData,
+        forumDetails,
+      }}
     >
       {children}
     </Context.Provider>
