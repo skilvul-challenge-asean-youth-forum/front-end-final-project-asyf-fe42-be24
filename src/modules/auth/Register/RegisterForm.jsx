@@ -22,8 +22,8 @@ const RegisterForm = () => {
         e.preventDefault();
         ctx.handleRegisterUser(
           fullName,
-          email,
           password,
+          email,
           phoneNumber,
           age,
           city,
@@ -69,11 +69,13 @@ const RegisterForm = () => {
         placeHolder="Your City"
         onChange={(e) => setCity(e.target.value)}
       />
-      <TextField
+      <input
         type="file"
         accept="image/*"
         onChange={(e) => setPicture(e.target.files[0])}
+        className="w-3/5 border rounded-md border-gray-400 p-3  bg-slate-50 focus:outline-slate-400"
       />
+
       <TextField
         type="password"
         value={password}

@@ -21,19 +21,18 @@ const Article = () => {
           <h1 className="text-3xl font-bold underline underline-offset-8 decoration-[#237804] decoration-3">
             Article
           </h1>
-          <div className="flex items-center">
-            <SearchField />
-          </div>
+          <SearchField />
         </TittleContainer>
-        <div className="flex justify-between gap-x-8">
+        <div className="flex flex-col md:flex-row justify-between gap-x-8">
           <Grid>
-            <article className="col-span-3">
+            <article className="md:col-span-3">
               <img src="./ArticleHero.svg" className="w-full" alt="" />
             </article>
+
             {ctx.articleData.map((article) => (
               <article
                 key={article.id}
-                className="border-gray-400 border-2 text-justify h-52 pb-4"
+                className="border-gray-400 border-2 md:text-justify md:h-52 pb-4"
               >
                 <img
                   src={article.pictures}
@@ -47,7 +46,9 @@ const Article = () => {
               </article>
             ))}
           </Grid>
-          <ArticleLates />
+          <div>
+            <ArticleLates />
+          </div>
         </div>
       </ContentLayout>
       <Footer />

@@ -14,7 +14,7 @@ import TextButton from "@/components/Button/TextButton";
 
 const Forum = () => {
   const ctx = useContext(Context);
-
+  console.log(ctx.forumData);
   return (
     <MainLayout>
       <Navbar />
@@ -23,7 +23,7 @@ const Forum = () => {
           <h1 className="text-3xl font-bold underline underline-offset-8 decoration-[#237804] decoration-3">
             Forums
           </h1>
-          <div className="flex items-center gap-x-2">
+          <div className="flex flex-col md:flex-row justify-center gap-y-4 items-center gap-x-2">
             <SearchField />
             <ButtonLink />
           </div>
