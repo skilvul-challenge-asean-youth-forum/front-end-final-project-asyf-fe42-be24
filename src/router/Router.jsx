@@ -27,7 +27,7 @@ export const Router = () => {
       <Route path="/forums">
         <Route index element={<Forum />} />
         <Route path="/forums/addforum" element={<Addforum />} />
-        <Route path="/forums/detailforum/:id" element={<DetailForum />} />
+        <Route path="/forums/:id" element={<DetailForum />} />
       </Route>
     </Routes>
   );
