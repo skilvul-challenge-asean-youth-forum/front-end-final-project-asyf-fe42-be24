@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export const Context = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const Provider = ({ children }) => {
   const [articleData, setArticleData] = useState([]);
   const [forumData, setForumData] = useState([]);
@@ -25,8 +26,8 @@ export const Provider = ({ children }) => {
     try {
       const formData = new FormData();
       formData.append("fullname", fullName);
-      formData.append("email", email);
       formData.append("password", password);
+      formData.append("email", email);
       formData.append("no_hp", phoneNumber);
       formData.append("age", age);
       formData.append("city", city);
@@ -42,11 +43,7 @@ export const Provider = ({ children }) => {
       );
       const result = await res.json();
       console.log(result);
-      if (formData !== "") {
-        navigate("/login");
-      } else {
-        alert("Cannot be empty");
-      }
+      result && navigate("/login");
     } catch (error) {
       console.log(error);
     }
@@ -72,8 +69,8 @@ export const Provider = ({ children }) => {
 
       console.log(result);
 
-      localStorage.setItem("access_token", result.token);
-      navigate("/");
+      localStorage.setItem("user", JSON.stringify(result));
+      result && navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -128,6 +125,34 @@ export const Provider = ({ children }) => {
   useEffect(() => {
     getForumData();
   }, []);
+
+  //function post forums
+  const handlePostForum = async (author, title, thumbnail, description) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user.token);
+    try {
+      const formData = new FormData();
+      formData.append("author", author);
+      formData.append("title", title);
+      formData.append("descrition", description);
+      formData.append("picture", thumbnail);
+
+      const response = await fetch(
+        "https://backend-service-dev.up.railway.app/forums",
+        {
+          method: "POST",
+          headers: {
+            Authorization: user.token,
+          },
+          body: formData,
+        }
+      );
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Context.Provider
       value={{
@@ -136,6 +161,7 @@ export const Provider = ({ children }) => {
         articleData,
         forumData,
         forumDetails,
+        handlePostForum,
       }}
     >
       {children}
